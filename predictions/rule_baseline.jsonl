@@ -1,0 +1,150 @@
+{"prediction": {"ticket_type": "Request", "topic": "Billing and Payments", "urgency": "medium", "tags": ["Account", "Billing", "Documentation", "Tech Support"]}}
+{"prediction": {"ticket_type": "Request", "topic": "Technical Support", "urgency": "medium", "tags": []}}
+{"prediction": {"ticket_type": "Request", "topic": "Technical Support", "urgency": "medium", "tags": []}}
+{"prediction": {"ticket_type": "Incident", "topic": "Service Outages and Maintenance", "urgency": "medium", "tags": ["Account", "Outage", "Tech Support"]}}
+{"prediction": {"ticket_type": "Incident", "topic": "Technical Support", "urgency": "medium", "tags": ["Tech Support"]}}
+{"prediction": {"ticket_type": "Request", "topic": "Technical Support", "urgency": "medium", "tags": ["Account"]}}
+{"prediction": {"ticket_type": "Request", "topic": "Technical Support", "urgency": "medium", "tags": []}}
+{"prediction": {"ticket_type": "Incident", "topic": "Technical Support", "urgency": "medium", "tags": ["Tech Support"]}}
+{"prediction": {"ticket_type": "Incident", "topic": "Service Outages and Maintenance", "urgency": "medium", "tags": ["Outage"]}}
+{"prediction": {"ticket_type": "Incident", "topic": "Service Outages and Maintenance", "urgency": "high", "tags": ["Account", "Outage"]}}
+{"prediction": {"ticket_type": "Request", "topic": "Technical Support", "urgency": "medium", "tags": ["Tech Support"]}}
+{"prediction": {"ticket_type": "Request", "topic": "Returns and Exchanges", "urgency": "medium", "tags": ["Account", "Refund"]}}
+{"prediction": {"ticket_type": "Incident", "topic": "Technical Support", "urgency": "medium", "tags": []}}
+{"prediction": {"ticket_type": "Incident", "topic": "Technical Support", "urgency": "high", "tags": []}}
+{"prediction": {"ticket_type": "Incident", "topic": "Technical Support", "urgency": "medium", "tags": ["Account", "Tech Support"]}}
+{"prediction": {"ticket_type": "Request", "topic": "Technical Support", "urgency": "medium", "tags": ["Documentation"]}}
+{"prediction": {"ticket_type": "Incident", "topic": "Technical Support", "urgency": "medium", "tags": ["Tech Support"]}}
+{"prediction": {"ticket_type": "Incident", "topic": "Technical Support", "urgency": "medium", "tags": ["Documentation"]}}
+{"prediction": {"ticket_type": "Incident", "topic": "Technical Support", "urgency": "high", "tags": ["Tech Support"]}}
+{"prediction": {"ticket_type": "Incident", "topic": "Technical Support", "urgency": "high", "tags": ["Documentation", "Tech Support"]}}
+{"prediction": {"ticket_type": "Incident", "topic": "Technical Support", "urgency": "medium", "tags": ["Tech Support"]}}
+{"prediction": {"ticket_type": "Incident", "topic": "Technical Support", "urgency": "high", "tags": ["Documentation", "Tech Support"]}}
+{"prediction": {"ticket_type": "Incident", "topic": "Billing and Payments", "urgency": "high", "tags": ["Billing", "Tech Support"]}}
+{"prediction": {"ticket_type": "Request", "topic": "Technical Support", "urgency": "medium", "tags": []}}
+{"prediction": {"ticket_type": "Incident", "topic": "Technical Support", "urgency": "medium", "tags": ["Tech Support"]}}
+{"prediction": {"ticket_type": "Incident", "topic": "Technical Support", "urgency": "medium", "tags": ["Account", "Tech Support"]}}
+{"prediction": {"ticket_type": "Incident", "topic": "Technical Support", "urgency": "medium", "tags": []}}
+{"prediction": {"ticket_type": "Request", "topic": "Technical Support", "urgency": "medium", "tags": []}}
+{"prediction": {"ticket_type": "Request", "topic": "Technical Support", "urgency": "high", "tags": ["Tech Support"]}}
+{"prediction": {"ticket_type": "Incident", "topic": "Technical Support", "urgency": "medium", "tags": ["Tech Support"]}}
+{"prediction": {"ticket_type": "Request", "topic": "Technical Support", "urgency": "medium", "tags": []}}
+{"prediction": {"ticket_type": "Incident", "topic": "Technical Support", "urgency": "medium", "tags": ["Account", "Tech Support"]}}
+{"prediction": {"ticket_type": "Request", "topic": "Technical Support", "urgency": "medium", "tags": ["Documentation", "Tech Support"]}}
+{"prediction": {"ticket_type": "Request", "topic": "Technical Support", "urgency": "medium", "tags": []}}
+{"prediction": {"ticket_type": "Incident", "topic": "Technical Support", "urgency": "medium", "tags": ["Account", "Tech Support"]}}
+{"prediction": {"ticket_type": "Incident", "topic": "Returns and Exchanges", "urgency": "medium", "tags": ["Refund"]}}
+{"prediction": {"ticket_type": "Request", "topic": "Technical Support", "urgency": "medium", "tags": ["Documentation"]}}
+{"prediction": {"ticket_type": "Incident", "topic": "Technical Support", "urgency": "high", "tags": ["Tech Support"]}}
+{"prediction": {"ticket_type": "Incident", "topic": "Technical Support", "urgency": "medium", "tags": ["Tech Support"]}}
+{"prediction": {"ticket_type": "Incident", "topic": "Returns and Exchanges", "urgency": "medium", "tags": ["Billing", "Refund", "Tech Support"]}}
+{"prediction": {"ticket_type": "Incident", "topic": "Technical Support", "urgency": "medium", "tags": ["Tech Support"]}}
+{"prediction": {"ticket_type": "Incident", "topic": "Service Outages and Maintenance", "urgency": "medium", "tags": ["Outage", "Tech Support"]}}
+{"prediction": {"ticket_type": "Incident", "topic": "Technical Support", "urgency": "high", "tags": ["Tech Support"]}}
+{"prediction": {"ticket_type": "Request", "topic": "Billing and Payments", "urgency": "medium", "tags": ["Billing"]}}
+{"prediction": {"ticket_type": "Request", "topic": "Technical Support", "urgency": "medium", "tags": []}}
+{"prediction": {"ticket_type": "Incident", "topic": "Service Outages and Maintenance", "urgency": "medium", "tags": ["Outage"]}}
+{"prediction": {"ticket_type": "Request", "topic": "Technical Support", "urgency": "medium", "tags": []}}
+{"prediction": {"ticket_type": "Incident", "topic": "Technical Support", "urgency": "high", "tags": ["Tech Support"]}}
+{"prediction": {"ticket_type": "Request", "topic": "Technical Support", "urgency": "medium", "tags": []}}
+{"prediction": {"ticket_type": "Request", "topic": "Technical Support", "urgency": "medium", "tags": ["Tech Support"]}}
+{"prediction": {"ticket_type": "Incident", "topic": "Technical Support", "urgency": "high", "tags": ["Tech Support"]}}
+{"prediction": {"ticket_type": "Request", "topic": "Technical Support", "urgency": "medium", "tags": []}}
+{"prediction": {"ticket_type": "Request", "topic": "Technical Support", "urgency": "medium", "tags": []}}
+{"prediction": {"ticket_type": "Incident", "topic": "Technical Support", "urgency": "medium", "tags": ["Tech Support"]}}
+{"prediction": {"ticket_type": "Request", "topic": "Billing and Payments", "urgency": "medium", "tags": ["Billing"]}}
+{"prediction": {"ticket_type": "Request", "topic": "Technical Support", "urgency": "medium", "tags": ["Documentation"]}}
+{"prediction": {"ticket_type": "Incident", "topic": "Technical Support", "urgency": "medium", "tags": ["Tech Support"]}}
+{"prediction": {"ticket_type": "Request", "topic": "Technical Support", "urgency": "medium", "tags": ["Tech Support"]}}
+{"prediction": {"ticket_type": "Incident", "topic": "Billing and Payments", "urgency": "medium", "tags": ["Billing"]}}
+{"prediction": {"ticket_type": "Request", "topic": "Technical Support", "urgency": "medium", "tags": []}}
+{"prediction": {"ticket_type": "Request", "topic": "Technical Support", "urgency": "medium", "tags": []}}
+{"prediction": {"ticket_type": "Request", "topic": "Technical Support", "urgency": "medium", "tags": ["Account"]}}
+{"prediction": {"ticket_type": "Incident", "topic": "Technical Support", "urgency": "medium", "tags": ["Account", "Tech Support"]}}
+{"prediction": {"ticket_type": "Incident", "topic": "Technical Support", "urgency": "medium", "tags": ["Tech Support"]}}
+{"prediction": {"ticket_type": "Incident", "topic": "Technical Support", "urgency": "medium", "tags": ["Tech Support"]}}
+{"prediction": {"ticket_type": "Incident", "topic": "Technical Support", "urgency": "medium", "tags": ["Documentation", "Tech Support"]}}
+{"prediction": {"ticket_type": "Request", "topic": "Technical Support", "urgency": "medium", "tags": []}}
+{"prediction": {"ticket_type": "Incident", "topic": "Service Outages and Maintenance", "urgency": "medium", "tags": ["Outage"]}}
+{"prediction": {"ticket_type": "Incident", "topic": "Technical Support", "urgency": "medium", "tags": ["Account"]}}
+{"prediction": {"ticket_type": "Request", "topic": "Technical Support", "urgency": "medium", "tags": ["Tech Support"]}}
+{"prediction": {"ticket_type": "Incident", "topic": "Technical Support", "urgency": "medium", "tags": ["Account", "Tech Support"]}}
+{"prediction": {"ticket_type": "Request", "topic": "Technical Support", "urgency": "medium", "tags": ["Documentation"]}}
+{"prediction": {"ticket_type": "Incident", "topic": "Technical Support", "urgency": "medium", "tags": ["Tech Support"]}}
+{"prediction": {"ticket_type": "Incident", "topic": "Service Outages and Maintenance", "urgency": "high", "tags": ["Outage", "Tech Support"]}}
+{"prediction": {"ticket_type": "Request", "topic": "Technical Support", "urgency": "medium", "tags": ["Tech Support"]}}
+{"prediction": {"ticket_type": "Incident", "topic": "Technical Support", "urgency": "medium", "tags": ["Tech Support"]}}
+{"prediction": {"ticket_type": "Incident", "topic": "Technical Support", "urgency": "high", "tags": ["Tech Support"]}}
+{"prediction": {"ticket_type": "Incident", "topic": "Technical Support", "urgency": "medium", "tags": ["Account", "Tech Support"]}}
+{"prediction": {"ticket_type": "Incident", "topic": "Technical Support", "urgency": "medium", "tags": ["Tech Support"]}}
+{"prediction": {"ticket_type": "Request", "topic": "Billing and Payments", "urgency": "medium", "tags": ["Account", "Billing"]}}
+{"prediction": {"ticket_type": "Request", "topic": "Technical Support", "urgency": "medium", "tags": []}}
+{"prediction": {"ticket_type": "Incident", "topic": "Technical Support", "urgency": "medium", "tags": []}}
+{"prediction": {"ticket_type": "Incident", "topic": "Technical Support", "urgency": "medium", "tags": ["Documentation"]}}
+{"prediction": {"ticket_type": "Request", "topic": "Technical Support", "urgency": "medium", "tags": []}}
+{"prediction": {"ticket_type": "Incident", "topic": "Technical Support", "urgency": "medium", "tags": ["Tech Support"]}}
+{"prediction": {"ticket_type": "Incident", "topic": "Technical Support", "urgency": "medium", "tags": ["Tech Support"]}}
+{"prediction": {"ticket_type": "Incident", "topic": "Technical Support", "urgency": "medium", "tags": ["Documentation", "Tech Support"]}}
+{"prediction": {"ticket_type": "Incident", "topic": "Technical Support", "urgency": "medium", "tags": ["Account", "Tech Support"]}}
+{"prediction": {"ticket_type": "Request", "topic": "Billing and Payments", "urgency": "medium", "tags": ["Billing"]}}
+{"prediction": {"ticket_type": "Request", "topic": "Technical Support", "urgency": "medium", "tags": ["Tech Support"]}}
+{"prediction": {"ticket_type": "Request", "topic": "Technical Support", "urgency": "medium", "tags": ["Account", "Documentation"]}}
+{"prediction": {"ticket_type": "Incident", "topic": "Technical Support", "urgency": "medium", "tags": []}}
+{"prediction": {"ticket_type": "Request", "topic": "Billing and Payments", "urgency": "medium", "tags": ["Billing"]}}
+{"prediction": {"ticket_type": "Incident", "topic": "Service Outages and Maintenance", "urgency": "high", "tags": ["Outage", "Tech Support"]}}
+{"prediction": {"ticket_type": "Incident", "topic": "Service Outages and Maintenance", "urgency": "high", "tags": ["Outage", "Tech Support"]}}
+{"prediction": {"ticket_type": "Request", "topic": "Technical Support", "urgency": "medium", "tags": ["Account", "Tech Support"]}}
+{"prediction": {"ticket_type": "Incident", "topic": "Technical Support", "urgency": "medium", "tags": ["Account", "Tech Support"]}}
+{"prediction": {"ticket_type": "Incident", "topic": "Technical Support", "urgency": "medium", "tags": ["Account", "Tech Support"]}}
+{"prediction": {"ticket_type": "Request", "topic": "Technical Support", "urgency": "medium", "tags": ["Documentation"]}}
+{"prediction": {"ticket_type": "Request", "topic": "Billing and Payments", "urgency": "medium", "tags": ["Billing"]}}
+{"prediction": {"ticket_type": "Incident", "topic": "Technical Support", "urgency": "medium", "tags": ["Tech Support"]}}
+{"prediction": {"ticket_type": "Incident", "topic": "Service Outages and Maintenance", "urgency": "medium", "tags": ["Outage"]}}
+{"prediction": {"ticket_type": "Request", "topic": "Technical Support", "urgency": "medium", "tags": ["Tech Support"]}}
+{"prediction": {"ticket_type": "Request", "topic": "Technical Support", "urgency": "medium", "tags": ["Documentation"]}}
+{"prediction": {"ticket_type": "Incident", "topic": "Technical Support", "urgency": "medium", "tags": ["Tech Support"]}}
+{"prediction": {"ticket_type": "Incident", "topic": "Service Outages and Maintenance", "urgency": "medium", "tags": ["Account", "Outage"]}}
+{"prediction": {"ticket_type": "Request", "topic": "Technical Support", "urgency": "medium", "tags": ["Documentation"]}}
+{"prediction": {"ticket_type": "Incident", "topic": "Technical Support", "urgency": "medium", "tags": []}}
+{"prediction": {"ticket_type": "Incident", "topic": "Technical Support", "urgency": "medium", "tags": []}}
+{"prediction": {"ticket_type": "Incident", "topic": "Service Outages and Maintenance", "urgency": "high", "tags": ["Outage"]}}
+{"prediction": {"ticket_type": "Incident", "topic": "Technical Support", "urgency": "medium", "tags": []}}
+{"prediction": {"ticket_type": "Incident", "topic": "Service Outages and Maintenance", "urgency": "medium", "tags": ["Documentation", "Outage"]}}
+{"prediction": {"ticket_type": "Request", "topic": "Technical Support", "urgency": "medium", "tags": ["Documentation"]}}
+{"prediction": {"ticket_type": "Request", "topic": "Technical Support", "urgency": "high", "tags": ["Tech Support"]}}
+{"prediction": {"ticket_type": "Request", "topic": "Technical Support", "urgency": "medium", "tags": ["Documentation", "Tech Support"]}}
+{"prediction": {"ticket_type": "Incident", "topic": "Technical Support", "urgency": "medium", "tags": ["Account", "Tech Support"]}}
+{"prediction": {"ticket_type": "Incident", "topic": "Technical Support", "urgency": "medium", "tags": ["Account"]}}
+{"prediction": {"ticket_type": "Incident", "topic": "Technical Support", "urgency": "medium", "tags": ["Account", "Tech Support"]}}
+{"prediction": {"ticket_type": "Request", "topic": "Technical Support", "urgency": "medium", "tags": ["Tech Support"]}}
+{"prediction": {"ticket_type": "Request", "topic": "Technical Support", "urgency": "high", "tags": []}}
+{"prediction": {"ticket_type": "Incident", "topic": "Technical Support", "urgency": "medium", "tags": ["Tech Support"]}}
+{"prediction": {"ticket_type": "Incident", "topic": "Service Outages and Maintenance", "urgency": "medium", "tags": ["Outage"]}}
+{"prediction": {"ticket_type": "Incident", "topic": "Technical Support", "urgency": "high", "tags": []}}
+{"prediction": {"ticket_type": "Request", "topic": "Billing and Payments", "urgency": "medium", "tags": ["Billing"]}}
+{"prediction": {"ticket_type": "Incident", "topic": "Service Outages and Maintenance", "urgency": "high", "tags": ["Outage", "Tech Support"]}}
+{"prediction": {"ticket_type": "Incident", "topic": "Technical Support", "urgency": "medium", "tags": ["Tech Support"]}}
+{"prediction": {"ticket_type": "Request", "topic": "Technical Support", "urgency": "medium", "tags": ["Account", "Tech Support"]}}
+{"prediction": {"ticket_type": "Incident", "topic": "Technical Support", "urgency": "medium", "tags": []}}
+{"prediction": {"ticket_type": "Incident", "topic": "Technical Support", "urgency": "medium", "tags": []}}
+{"prediction": {"ticket_type": "Request", "topic": "Technical Support", "urgency": "medium", "tags": ["Documentation"]}}
+{"prediction": {"ticket_type": "Request", "topic": "Technical Support", "urgency": "high", "tags": ["Documentation", "Tech Support"]}}
+{"prediction": {"ticket_type": "Request", "topic": "Technical Support", "urgency": "medium", "tags": []}}
+{"prediction": {"ticket_type": "Incident", "topic": "Technical Support", "urgency": "medium", "tags": ["Account"]}}
+{"prediction": {"ticket_type": "Request", "topic": "Technical Support", "urgency": "medium", "tags": ["Tech Support"]}}
+{"prediction": {"ticket_type": "Incident", "topic": "Technical Support", "urgency": "medium", "tags": ["Tech Support"]}}
+{"prediction": {"ticket_type": "Incident", "topic": "Technical Support", "urgency": "medium", "tags": ["Account"]}}
+{"prediction": {"ticket_type": "Request", "topic": "Technical Support", "urgency": "medium", "tags": ["Documentation"]}}
+{"prediction": {"ticket_type": "Request", "topic": "Technical Support", "urgency": "medium", "tags": ["Documentation"]}}
+{"prediction": {"ticket_type": "Request", "topic": "Technical Support", "urgency": "medium", "tags": []}}
+{"prediction": {"ticket_type": "Request", "topic": "Technical Support", "urgency": "medium", "tags": []}}
+{"prediction": {"ticket_type": "Request", "topic": "Technical Support", "urgency": "high", "tags": ["Tech Support"]}}
+{"prediction": {"ticket_type": "Incident", "topic": "Service Outages and Maintenance", "urgency": "high", "tags": ["Outage", "Tech Support"]}}
+{"prediction": {"ticket_type": "Request", "topic": "Technical Support", "urgency": "medium", "tags": ["Tech Support"]}}
+{"prediction": {"ticket_type": "Incident", "topic": "Technical Support", "urgency": "medium", "tags": []}}
+{"prediction": {"ticket_type": "Incident", "topic": "Technical Support", "urgency": "high", "tags": ["Tech Support"]}}
+{"prediction": {"ticket_type": "Request", "topic": "Technical Support", "urgency": "medium", "tags": ["Account", "Tech Support"]}}
+{"prediction": {"ticket_type": "Request", "topic": "Technical Support", "urgency": "medium", "tags": []}}
+{"prediction": {"ticket_type": "Incident", "topic": "Service Outages and Maintenance", "urgency": "medium", "tags": ["Outage", "Tech Support"]}}
+{"prediction": {"ticket_type": "Incident", "topic": "Billing and Payments", "urgency": "medium", "tags": ["Account", "Billing"]}}
+{"prediction": {"ticket_type": "Incident", "topic": "Technical Support", "urgency": "medium", "tags": ["Tech Support"]}}
