@@ -11,3 +11,6 @@ outputs/
 .DS_Store
 
 work.ipynb
+
+mlruns/
+mlflow.db

@@ -1,4 +1,5 @@
 import argparse
+import mlflow
 import json
 from pathlib import Path
 
@@ -38,7 +39,21 @@ def parse_args() -> argparse.Namespace:
         "--report-path",
         type=Path,
         default=DEFAULT_REPORT_PATH,
-        help="Path to report JSONL file.",
+        help="Path to report JSON file.",
+    )
+
+    parser.add_argument(
+        "--experiment-name",
+        type=str,
+        default="ticket-routing",
+        help="MLflow experiment name.",
+    )
+
+    parser.add_argument(
+        "--run-name",
+        type=str,
+        default="rule_baseline",
+        help="MLflow run name.",
     )
 
     return parser.parse_args()
@@ -251,6 +266,18 @@ def main() -> None:
 
     print(json.dumps(metrics, indent=2, ensure_ascii=False))
     print(f"Saved metrics to: {report_path}")
+
+    mlflow.set_experiment(args.experiment_name)
+
+    with mlflow.start_run(run_name=args.run_name):
+        mlflow.log_param("gold_path", str(gold_path))
+        mlflow.log_param("pred_path", str(pred_path))
+        mlflow.log_param("report_path", str(report_path))
+
+        for metric_name, metric_value in metrics.items():
+            mlflow.log_metric(metric_name, metric_value)
+
+        mlflow.log_artifact(str(report_path))
 
 if __name__ == "__main__":
     main()
