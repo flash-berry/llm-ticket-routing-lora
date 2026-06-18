@@ -1,3 +1,4 @@
+import argparse
 import json
 from pathlib import Path
 
@@ -9,9 +10,45 @@ from src.schemas import TicketRoutingOutput
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
-GOLD_PATH = PROJECT_ROOT / "data" / "processed" / "test.jsonl"
-PRED_PATH = PROJECT_ROOT / "predictions" / "rule_baseline.jsonl"
-REPORT_PATH = PROJECT_ROOT / "reports" / "rule_baseline_metrics.json"
+DEFAULT_GOLD_PATH = PROJECT_ROOT / "data" / "processed" / "test.jsonl"
+DEFAULT_PRED_PATH = PROJECT_ROOT / "predictions" / "rule_baseline.jsonl"
+DEFAULT_REPORT_PATH = PROJECT_ROOT / "reports" / "rule_baseline_metrics.json"
+
+
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(
+        description="Evaluate ticket routing predictions."
+    )
+
+    parser.add_argument(
+        "--gold-path",
+        type=Path,
+        default=DEFAULT_GOLD_PATH,
+        help="Path to gold test JSONL file.",
+    )
+
+    parser.add_argument(
+        "--pred-path",
+        type=Path,
+        default=DEFAULT_PRED_PATH,
+        help="Path to prediction JSONL file.",
+    )
+
+    parser.add_argument(
+        "--report-path",
+        type=Path,
+        default=DEFAULT_REPORT_PATH,
+        help="Path to report JSONL file.",
+    )
+
+    return parser.parse_args()
+
+
+def resolve_path(path:Path) -> Path:
+    if path.is_absolute():
+        return path
+
+    return PROJECT_ROOT / path
 
 
 def read_jsonl(path: Path) -> list[dict]:
@@ -152,8 +189,14 @@ def compute_schema_validity(predictions: list[dict]) -> dict:
 
 
 def main() -> None:
-    gold_rows = read_jsonl(GOLD_PATH)
-    pred_rows = read_jsonl(PRED_PATH)
+    args = parse_args()
+
+    gold_path = resolve_path(args.gold_path)
+    pred_path = resolve_path(args.pred_path)
+    report_path = resolve_path(args.report_path)
+
+    gold_rows = read_jsonl(gold_path)
+    pred_rows = read_jsonl(pred_path)
 
     print(f"gold rows: {len(gold_rows)}")
     print(f"pred rows: {len(pred_rows)}")
@@ -201,13 +244,13 @@ def main() -> None:
         compute_schema_validity(predictions)
     )
 
-    REPORT_PATH.parent.mkdir(parents=True, exist_ok=True)
+    report_path.parent.mkdir(parents=True, exist_ok=True)
 
-    with REPORT_PATH.open('w', encoding='utf8') as f:
+    with report_path.open('w', encoding='utf8') as f:
         f.write(json.dumps(metrics, indent=2, ensure_ascii=False))
 
     print(json.dumps(metrics, indent=2, ensure_ascii=False))
-    print(f"Saved metrics to: {REPORT_PATH}")
+    print(f"Saved metrics to: {report_path}")
 
 if __name__ == "__main__":
     main()
