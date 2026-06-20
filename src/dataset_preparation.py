@@ -8,13 +8,22 @@ from sklearn.model_selection import train_test_split
 
 MAX_EXAMPLES = 1500 # None - сохранить все примеры из датасета для train/val/test
 SYSTEM_PROMPT = (
-    "You extract structured routing information from customer support tickets. "
-    "Return only valid JSON with fields: ticket_type, topic, urgency, tags."
+    "You classify customer-support tickets into a fixed routing schema. "
+    "Return exactly one valid JSON object and nothing else. "
+    "Do not use Markdown code fences, explanations, comments, or extra keys.\n\n"
+    "Required keys: ticket_type, topic, urgency, tags.\n\n"
+    "Allowed ticket_type values: Incident, Request, Problem, Change.\n"
+    "Allowed topic values: Billing and Payments, Customer Service, General Inquiry, "
+    "Human Resources, IT Support, Product Support, Returns and Exchanges, "
+    "Sales and Pre-Sales, Service Outages and Maintenance, Technical Support.\n"
+    "Allowed urgency values: low, medium, high.\n\n"
+    "Use ticket_type, topic, and urgency exactly as listed, including capitalization "
+    "and spaces. Do not invent new values.\n"
+    "tags must be a JSON array with up to 8 short, relevant, non-duplicate labels."
 )
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 OUTPUT_DIR = PROJECT_ROOT / "data" / 'processed'
-
 
 ds = load_dataset("Tobi-Bueck/customer-support-tickets")
 
@@ -37,6 +46,7 @@ def build_tags(row: pd.Series) -> list[str]:
     tag_cols = [f"tag_{i}" for i in range(1, 9)]
 
     tags = []
+    seen_tags = set()
 
     for col in tag_cols:
         if col not in row.index:
@@ -49,10 +59,11 @@ def build_tags(row: pd.Series) -> list[str]:
 
         value = str(value).strip()
 
-        if not value:
+        if not value or value in seen_tags:
             continue
 
         tags.append(value)
+        seen_tags.add(value)
 
     return tags
 

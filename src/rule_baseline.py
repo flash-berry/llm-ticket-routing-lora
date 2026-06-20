@@ -1,6 +1,9 @@
 import json
 from pathlib import Path
 
+from src.prediction_utils import parse_and_validate_response
+
+
 PROJECT_DIR = Path(__file__).resolve().parents[1]
 
 
@@ -80,9 +83,10 @@ def main() -> None:
         text = row['messages'][1]['content']
         prediction = predict_one(text)
 
-        predictions.append({
-            "prediction": prediction
-        })
+        raw_response = json.dumps(prediction, ensure_ascii=False)
+        result = parse_and_validate_response(raw_response)
+
+        predictions.append(result)
 
     save_jsonl(predictions, output_path)
 

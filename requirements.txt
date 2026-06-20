@@ -4,3 +4,7 @@ pydantic
 scikit-learn
 tqdm
 mlflow
+pyyaml
+transformers
+accelerate
+torch

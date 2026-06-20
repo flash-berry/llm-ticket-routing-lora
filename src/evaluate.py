@@ -4,9 +4,6 @@ import json
 from pathlib import Path
 
 from sklearn.metrics import accuracy_score, f1_score
-from pydantic import ValidationError
-
-from src.schemas import TicketRoutingOutput
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -56,6 +53,13 @@ def parse_args() -> argparse.Namespace:
         help="MLflow run name.",
     )
 
+    parser.add_argument(
+        "--max-examples",
+        type=int,
+        default=None,
+        help="Optional limit for gold examples, useful for debug runs.",
+    )
+
     return parser.parse_args()
 
 
@@ -76,15 +80,75 @@ def read_jsonl(path: Path) -> list[dict]:
     return rows
 
 
-def get_targets_and_predictions(gold_rows: list[dict], pred_rows: list[dict]) -> tuple[list[dict], list[dict]]:
+def make_invalid_prediction() -> dict:
+    return {
+        "ticket_type": "__INVALID__",
+        "topic": "__INVALID__",
+        "urgency": "__INVALID__",
+        "tags": [],
+    }
+
+
+def get_content_prediction(pred_row: dict) -> dict:
+    parsed_response = pred_row.get("parsed_response")
+
+    if not isinstance(parsed_response, dict):
+        return make_invalid_prediction()
+
+    ticket_type = parsed_response.get("ticket_type", "__INVALID__")
+    topic = parsed_response.get("topic", "__INVALID__")
+    urgency = parsed_response.get("urgency", "__INVALID__")
+    tags = parsed_response.get("tags", [])
+
+    if not isinstance(ticket_type, str):
+        ticket_type = "__INVALID__"
+
+    if not isinstance(topic, str):
+        topic = "__INVALID__"
+
+    if not isinstance(urgency, str):
+        urgency = "__INVALID__"
+
+    if not isinstance(tags, list):
+        tags = []
+
+    clean_tags = [
+        tag.strip()
+        for tag in tags
+        if isinstance(tag, str) and tag.strip()
+    ]
+
+    return {
+        "ticket_type": ticket_type,
+        "topic": topic,
+        "urgency": urgency,
+        "tags": clean_tags,
+    }
+
+
+def get_targets_and_predictions(
+    gold_rows: list[dict],
+    pred_rows: list[dict],
+) -> tuple[list[dict], list[dict], list[bool], list[bool]]:
     gold_targets = []
     predictions = []
+    json_valid_flags = []
+    schema_valid_flags = []
 
     for gold_row, pred_row in zip(gold_rows, pred_rows):
         gold_targets.append(gold_row["target"])
-        predictions.append(pred_row["prediction"])
 
-    return gold_targets, predictions
+        prediction = get_content_prediction(pred_row)
+        predictions.append(prediction)
+
+        json_valid_flags.append(
+            bool(pred_row.get("json_valid", False))
+        )
+        schema_valid_flags.append(
+            bool(pred_row.get("schema_valid", False))
+        )
+
+    return gold_targets, predictions, json_valid_flags, schema_valid_flags
 
 
 def compute_metrics(
@@ -95,9 +159,17 @@ def compute_metrics(
     y_true = [row[field] for row in gold_targets]
     y_pred = [row[field] for row in predictions]
 
+    observed_labels = sorted(set(y_true))
+
     return {
         f"{field}_accuracy": accuracy_score(y_true, y_pred),
-        f"{field}_macro_f1": f1_score(y_true, y_pred, average="macro", zero_division=0),
+        f"{field}_macro_f1": f1_score(
+            y_true,
+            y_pred,
+            labels=observed_labels,
+            average="macro",
+            zero_division=0,
+        ),
     }
 
 
@@ -188,18 +260,15 @@ def compute_exact_match_without_tags(
     }
 
 
-def compute_schema_validity(predictions: list[dict]) -> dict:
-    valid = 0
-
-    for pred in predictions:
-        try:
-            TicketRoutingOutput.model_validate(pred)
-            valid += 1
-        except ValidationError:
-            pass
-
+def compute_json_validity(json_valid_flags: list[bool]) -> dict:
     return {
-        "schema_validity": valid / len(predictions)
+        "json_validity": sum(json_valid_flags) / len(json_valid_flags)
+    }
+
+
+def compute_schema_validity(schema_valid_flags: list[bool]) -> dict:
+    return {
+        "schema_validity": sum(schema_valid_flags) / len(schema_valid_flags)
     }
 
 
@@ -213,6 +282,10 @@ def main() -> None:
     gold_rows = read_jsonl(gold_path)
     pred_rows = read_jsonl(pred_path)
 
+    if args.max_examples is not None:
+        gold_rows = gold_rows[:args.max_examples]
+        pred_rows = pred_rows[:args.max_examples]
+
     print(f"gold rows: {len(gold_rows)}")
     print(f"pred rows: {len(pred_rows)}")
 
@@ -221,7 +294,9 @@ def main() -> None:
             f"Different number of rows: gold={len(gold_rows)}, pred={len(pred_rows)}"
         )
 
-    gold_targets, predictions = get_targets_and_predictions(gold_rows, pred_rows)
+    gold_targets, predictions, json_valid_flags, schema_valid_flags = (
+        get_targets_and_predictions(gold_rows, pred_rows)
+    )
 
     metrics = {}
 
@@ -255,9 +330,8 @@ def main() -> None:
         )
     )
 
-    metrics.update(
-        compute_schema_validity(predictions)
-    )
+    metrics.update(compute_json_validity(json_valid_flags))
+    metrics.update(compute_schema_validity(schema_valid_flags))
 
     report_path.parent.mkdir(parents=True, exist_ok=True)
 
