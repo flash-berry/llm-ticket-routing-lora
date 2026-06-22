@@ -71,14 +71,32 @@ def load_model_and_tokenizer(model_name: str):
     return model, tokenizer
 
 
+def build_messages(
+        row: dict,
+        few_shot_rows: list[dict],
+) -> list[dict]:
+    messages = [row["messages"][0]]
+
+    for few_shot_row in few_shot_rows:
+        messages.extend(few_shot_row["messages"])
+
+    messages.append(row["messages"][1])
+
+    return messages
+
+
 def generate_response(
         row: dict,
         model,
         tokenizer,
         max_new_tokens: int,
         temperature: float,
+        few_shot_rows: list[dict],
 ) -> str:
-    messages = row["messages"][:2]
+    messages = build_messages(
+        row=row,
+        few_shot_rows=few_shot_rows,
+    )
 
     prompt = tokenizer.apply_chat_template(
         messages,
@@ -118,6 +136,16 @@ def main() -> None:
     pred_path = resolve_path(Path(config["output"]["pred_path"]))
     max_examples = config["data"].get("max_examples", None)
 
+    few_shot_rows = []
+
+    few_shot_config = config.get("few_shot")
+
+    if few_shot_config is not None:
+        few_shot_path = resolve_path(
+            Path(few_shot_config["examples_path"])
+        )
+        few_shot_rows = read_jsonl(few_shot_path)
+
     rows = read_jsonl(input_path)
 
     if max_examples is not None:
@@ -128,6 +156,7 @@ def main() -> None:
     print(f"Prediction path: {pred_path}")
     print(f"Rows to process: {len(rows)}")
     print(f"Model: {config['model']['name']}")
+    print(f"Few-shot examples: {len(few_shot_rows)}")
 
     model_name = config["model"]["name"]
     max_new_tokens = int(config["model"]["max_new_tokens"])
@@ -146,6 +175,7 @@ def main() -> None:
             tokenizer=tokenizer,
             max_new_tokens=max_new_tokens,
             temperature=temperature,
+            few_shot_rows=few_shot_rows,
         )
 
         result = parse_and_validate_response(raw_response)

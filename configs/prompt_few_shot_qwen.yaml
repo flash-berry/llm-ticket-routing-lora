@@ -1,0 +1,18 @@
+model:
+  name: Qwen/Qwen2.5-0.5B-Instruct
+  max_new_tokens: 256
+  temperature: 0.0
+
+data:
+  input_path: data/processed/test.jsonl
+  max_examples: null
+
+few_shot:
+  examples_path: data/few_shot/qwen_4shot_train_examples.jsonl
+
+output:
+  pred_path: predictions/prompt_few_shot_qwen.jsonl
+
+experiment:
+  name: ticket-routing
+  run_name: prompt_few_shot_qwen_v1
