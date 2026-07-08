@@ -1,0 +1,13 @@
+datasets
+pandas
+pydantic
+scikit-learn
+tqdm
+mlflow
+pyyaml
+transformers
+accelerate
+torch
+bitsandbytes
+peft
+trl

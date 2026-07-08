@@ -1,0 +1,7 @@
+{
+  "best_epoch": 4,
+  "best_validation_loss": 0.29999137369212064,
+  "best_train_loss": 0.2115725834205986,
+  "best_global_step": 600,
+  "num_completed_epochs": 6
+}

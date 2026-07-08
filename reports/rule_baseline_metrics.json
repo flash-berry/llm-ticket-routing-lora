@@ -1,0 +1,15 @@
+{
+  "ticket_type_accuracy": 0.6466666666666666,
+  "ticket_type_macro_f1": 0.38336960696453715,
+  "topic_accuracy": 0.3466666666666667,
+  "topic_macro_f1": 0.22634973721930246,
+  "urgency_accuracy": 0.4866666666666667,
+  "urgency_macro_f1": 0.31845130066545674,
+  "tag_precision": 0.5,
+  "tag_recall": 0.10596026490066225,
+  "tag_f1": 0.17486338797814208,
+  "exact_match": 0.0,
+  "exact_match_without_tags": 0.10666666666666667,
+  "json_validity": 1.0,
+  "schema_validity": 1.0
+}
